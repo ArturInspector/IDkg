@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспорт КР SBT - Түндүк</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Фундук</h1>
+                <p class="subtitle">Государственный портал электронных услуг (постоянно падает)</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="service-card">
+                <h2 class="service-title">Паспорт Кыргызской Республики SBT</h2>
+                <p class="service-description">
+                    Получите цифровой паспорт в виде Soulbound Token (SBT) на блокчейне.
+                </p>
+
+                <div id="wallet-section" class="wallet-section">
+                    <button id="connect-btn" class="btn btn-primary">Подключить кошелек</button>
+                    <div id="wallet-info" class="wallet-info" style="display: none;">
+                        <p class="wallet-address">Адрес: <span id="wallet-address"></span></p>
+                        <p id="passport-status" class="passport-status"></p>
+                    </div>
+                </div>
+
+                <form id="mint-form" class="mint-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="passport-pin" class="form-label">
+                            Введите ПИН паспорта (14 символов)
+                        </label>
+                        <input 
+                            type="text" 
+                            id="passport-pin" 
+                            class="form-input" 
+                            placeholder="ID123456789012"
+                            maxlength="14"
+                            required
+                        >
+                        <small class="form-hint">Пример: ID123456789012</small>
+                    </div>
+
+                    <button type="submit" id="mint-btn" class="btn btn-primary btn-block">
+                        Получить паспорт SBT
+                    </button>
+                </form>
+
+                <div id="result-section" class="result-section" style="display: none;">
+                    <div id="success-message" class="message message-success" style="display: none;">
+                        <h3>Паспорт успешно выдан!</h3>
+                        <p>Token ID: <span id="token-id"></span></p>
+                        <p>Транзакция: <a id="tx-link" href="#" target="_blank" class="tx-link"></a></p>
+                    </div>
+                    <div id="error-message" class="message message-error" style="display: none;">
+                        <h3>Ошибка</h3>
+                        <p id="error-text"></p>
+                    </div>
+                </div>
+
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Обработка транзакции...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Пожалуйста зарегистрируйтесь, потом купите USDKG и скаманитесь.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
