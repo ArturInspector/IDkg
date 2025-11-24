@@ -1,4 +1,4 @@
-# KyrgyzPassportSBT Frontend
+# KyrgyzPassportSBT
 
 ## Prologue: On Digital Identity and the Future
 
